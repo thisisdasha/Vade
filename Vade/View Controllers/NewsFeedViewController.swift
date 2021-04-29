@@ -6,16 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var myTableView = UITableView()
     let identifier = "postCell"
     let cellNib = UINib(nibName: "PostTableViewCell", bundle: nil)
-    var posts = [
-        Post(id: "1", author: "Author", text: "Some text"),
-        Post(id: "2", author: "Author2", text: "Some text2")
-    ]
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +37,33 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
         myTableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.addSubview(myTableView)
         myTableView.reloadData()
+        observePosts()
+    }
+    
+    func observePosts() {
+        let postsRef = Database.database().reference().child("posts")
+        
+        postsRef.observe(.value, with: { snapshot in
+            
+            var tempPosts = [Post]()
+            
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String:Any],
+                    let author = dict["author"] as? [String:Any],
+                    let username = author["username"] as? String,
+                    let text = dict["text"] as? String {
+                    
+                
+                    let post = Post(id: childSnapshot.key, author: username, text: text)
+                    tempPosts.insert(post, at: 0)
+                }
+            }
+            
+            self.posts = tempPosts
+            self.myTableView.reloadData()
+            
+        })
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import Firebase
+import Network
 
 class NewPostViewController: UIViewController, UITextViewDelegate {
 
@@ -22,6 +23,27 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func tappedPostButton(_ sender: Any) {
+        
+    
+        //MARK: - TRY save posts
+        let postRef = Database.database().reference().child("posts").childByAutoId()
+        let postObject = [
+            "author" : [
+                "userid" : VadeUser.shared.getFirestoreID(),
+                "username" : VadeUser.shared.getName()
+            ],
+            "text" : textView.text ?? "",
+            "timestamp" : [".sv":"timestamp"]
+        ] as [String : Any]
+        
+        postRef.setValue(postObject) { (error , ref) in
+            if error == nil {
+                self.dismiss(animated: true)
+            } else {
+                // Handle the error
+            }
+        }
+    
         
     }
     
@@ -39,16 +61,6 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         postButton.layer.cornerRadius = postButton.bounds.height / 2
         
         textView.delegate = self
-        
-        //test database
-        let ref = Database.database().reference()
-        
-        //read data
-//        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
-//            let name = snapshot.value as? String
-//            print(name)
-//        }
-        ref.child("-MXDnGxOntZ1pC448fh0").removeValue()
         
     }
     
