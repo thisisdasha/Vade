@@ -36,13 +36,24 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
             "timestamp" : [".sv":"timestamp"]
         ] as [String : Any]
         
-        postRef.setValue(postObject) { (error , ref) in
-            if error == nil {
-                self.dismiss(animated: true)
-            } else {
-                // Handle the error
+        //MARK:- здесь проверка на подключение к сети, нужно добавить предупреждение перед выходом когда офлайн
+        let connectedRef = Database.database().reference(withPath: ".info/connected")
+         connectedRef.observe(.value, with: { snapshot in
+           if snapshot.value as? Bool ?? false {
+             print("🟢Connected")
+            postRef.setValue(postObject) { (error , ref) in
+                if error == nil {
+                    self.dismiss(animated: true)
+                } else {
+                    // Handle the error
+                }
             }
-        }
+           } else {
+             print("🟢Not connected")
+            self.dismiss(animated: true)
+           }
+         })
+
     
         
     }

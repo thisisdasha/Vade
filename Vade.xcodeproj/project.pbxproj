@@ -164,6 +164,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0EF86D84263B494C0055903E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4159B92F252876190028D4BB /* Main.storyboard */,
+				4159B9342528761A0028D4BB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		412FB4962559D525006726CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,11 +222,10 @@
 				4159B95C252876FA0028D4BB /* View Controllers */,
 				4159B929252876190028D4BB /* AppDelegate.swift */,
 				4159B92B252876190028D4BB /* SceneDelegate.swift */,
-				4159B92F252876190028D4BB /* Main.storyboard */,
 				0E35D3F925E96AD60069D85C /* PostTableViewCell.swift */,
 				0E35D3FA25E96AD60069D85C /* PostTableViewCell.xib */,
 				4159B9322528761A0028D4BB /* Assets.xcassets */,
-				4159B9342528761A0028D4BB /* LaunchScreen.storyboard */,
+				0EF86D84263B494C0055903E /* Storyboard */,
 				4159B984252897EE0028D4BB /* GoogleService-Info.plist */,
 				4159B9372528761A0028D4BB /* Info.plist */,
 				4159B9E7252A3C8D0028D4BB /* data */,
