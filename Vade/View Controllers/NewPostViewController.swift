@@ -57,7 +57,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        backButton.tintColor = UIColor.systemBlue
+        backButton.tintColor = UIColor.gray
         postButton.layer.cornerRadius = postButton.bounds.height / 2
         
         textView.delegate = self

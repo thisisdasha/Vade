@@ -27,7 +27,10 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func createTable() {
-        title = "News Feed"
+        title = "Vade"
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
+        
+        
         self.myTableView = UITableView(frame: view.bounds, style: .plain)
         myTableView.register(cellNib, forCellReuseIdentifier: identifier)
         myTableView.tableFooterView = UIView()

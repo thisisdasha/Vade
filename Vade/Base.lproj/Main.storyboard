@@ -319,7 +319,7 @@
                         <viewLayoutGuide key="safeArea" id="18f-j3-8rf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Train" id="aZ2-aR-pUb"/>
+                    <tabBarItem key="tabBarItem" title="Train" image="icon_bike" id="aZ2-aR-pUb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSK-58-eSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -362,7 +362,7 @@
                             <constraint firstItem="3sC-Yl-rkE" firstAttribute="trailing" secondItem="I89-b1-8LJ" secondAttribute="trailing" constant="5" id="rsn-sw-71S"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="-1" title="Profile" id="WG2-V3-NKe"/>
+                    <tabBarItem key="tabBarItem" tag="-1" title="Profile" image="icon_profile" id="WG2-V3-NKe"/>
                     <connections>
                         <outlet property="healthDataTableView" destination="hH1-84-ZTZ" id="eEp-lz-SXZ"/>
                         <outlet property="personalDataTableView" destination="2sI-jr-Z8w" id="ZdR-73-re1"/>
@@ -380,6 +380,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" systemColor="systemOrangeColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="oR1-yf-PeU" kind="relationship" relationship="viewControllers" id="0kT-Yd-qPI"/>
@@ -516,6 +522,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0HG-Qc-Y14">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9jJ-nO-oeX">
+                            <color key="tintColor" systemColor="systemGrayColor"/>
                             <connections>
                                 <segue destination="qMY-HV-Zal" kind="presentation" id="wbb-7a-l5U"/>
                             </connections>
@@ -575,7 +582,8 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="vnv-fG-STl">
                                 <rect key="frame" x="282" y="13" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -600,7 +608,7 @@
         <scene sceneID="DIt-xA-hqZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oR1-yf-PeU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News Feed" image="homeIcon" id="BET-PA-Zn9"/>
+                    <tabBarItem key="tabBarItem" title="News Feed" image="icon_home" id="BET-PA-Zn9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tjf-kF-Av0">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -636,15 +644,20 @@
     </scenes>
     <resources>
         <image name="closeIcon" width="24" height="24"/>
-        <image name="homeIcon" width="24" height="24"/>
+        <image name="icon_bike" width="24" height="24"/>
+        <image name="icon_home" width="24" height="24"/>
+        <image name="icon_profile" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
