@@ -173,6 +173,54 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		0EFEAFB1264329D700CEDF46 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				41240D05256A6B6C008C597F /* LBTASignUpController.swift */,
+				4159B92D252876190028D4BB /* AuthMethodsViewController.swift */,
+				4159B96F25287D130028D4BB /* LoginViewController.swift */,
+				4159B97425287D280028D4BB /* HealthDataViewController.swift */,
+				4159B97925287D3C0028D4BB /* SignUpViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		0EFEAFB226432A3F00CEDF46 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0E2B6CC4255EC14800AD2816 /* OnboardingViewController.swift */,
+				0E5F853B25E92E8500836E67 /* DataViewController.swift */,
+				0E7F232725E9311D00406581 /* CustomPageViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		0EFEAFB326432A9F00CEDF46 /* News Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0E35D40025E977900069D85C /* NewsFeedViewController.swift */,
+				0E3F1F3B25EBBCFF00D55B2D /* NewPostViewController.swift */,
+				0E35D3F925E96AD60069D85C /* PostTableViewCell.swift */,
+				0E35D3FA25E96AD60069D85C /* PostTableViewCell.xib */,
+			);
+			path = "News Feed";
+			sourceTree = "<group>";
+		};
+		0EFEAFB426432B1800CEDF46 /* Train */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Train;
+			sourceTree = "<group>";
+		};
+		0EFEAFB526432B2800CEDF46 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				41581ED025643506009DC27B /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		412FB4962559D525006726CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,16 +264,18 @@
 		4159B928252876190028D4BB /* Vade */ = {
 			isa = PBXGroup;
 			children = (
+				0EFEAFB526432B2800CEDF46 /* Profile */,
+				0EFEAFB426432B1800CEDF46 /* Train */,
+				0EFEAFB326432A9F00CEDF46 /* News Feed */,
+				0EFEAFB226432A3F00CEDF46 /* Onboarding */,
+				0EFEAFB1264329D700CEDF46 /* Authorization */,
 				41581EB725641F7E009DC27B /* Extensions */,
 				412FB4962559D525006726CC /* Models */,
 				4159B97E25287E750028D4BB /* Helpers */,
-				4159B95C252876FA0028D4BB /* View Controllers */,
 				4159B929252876190028D4BB /* AppDelegate.swift */,
 				4159B92B252876190028D4BB /* SceneDelegate.swift */,
-				0E35D3F925E96AD60069D85C /* PostTableViewCell.swift */,
-				0E35D3FA25E96AD60069D85C /* PostTableViewCell.xib */,
-				4159B9322528761A0028D4BB /* Assets.xcassets */,
 				0EF86D84263B494C0055903E /* Storyboard */,
+				4159B9322528761A0028D4BB /* Assets.xcassets */,
 				4159B984252897EE0028D4BB /* GoogleService-Info.plist */,
 				4159B9372528761A0028D4BB /* Info.plist */,
 				4159B9E7252A3C8D0028D4BB /* data */,
@@ -251,30 +301,12 @@
 			path = VadeUITests;
 			sourceTree = "<group>";
 		};
-		4159B95C252876FA0028D4BB /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0E3F1F3B25EBBCFF00D55B2D /* NewPostViewController.swift */,
-				4159B92D252876190028D4BB /* AuthMethodsViewController.swift */,
-				4159B96F25287D130028D4BB /* LoginViewController.swift */,
-				4159B97425287D280028D4BB /* HealthDataViewController.swift */,
-				0E2B6CC4255EC14800AD2816 /* OnboardingViewController.swift */,
-				4159B97925287D3C0028D4BB /* SignUpViewController.swift */,
-				41581EC525642D82009DC27B /* MainTabBarViewController.swift */,
-				41581ED025643506009DC27B /* ProfileViewController.swift */,
-				0E7F232725E9311D00406581 /* CustomPageViewController.swift */,
-				41240D05256A6B6C008C597F /* LBTASignUpController.swift */,
-				0E5F853B25E92E8500836E67 /* DataViewController.swift */,
-				0E35D40025E977900069D85C /* NewsFeedViewController.swift */,
-			);
-			path = "View Controllers";
-			sourceTree = "<group>";
-		};
 		4159B97E25287E750028D4BB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				4176334B256133D400C0CBF3 /* Builders */,
 				4159B97F25287E910028D4BB /* Utilities.swift */,
+				41581EC525642D82009DC27B /* MainTabBarViewController.swift */,
 				4159B9B72529E0D90028D4BB /* Constants.swift */,
 				4176335E25613F5A00C0CBF3 /* CustomDetailCell.swift */,
 				41581E972562F78F009DC27B /* PickerCustomCell.swift */,
