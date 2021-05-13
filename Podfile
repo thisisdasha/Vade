@@ -25,5 +25,6 @@ target 'Vade' do
   pod 'FacebookLogin'
   pod 'LBTATools'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end

@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -104,21 +105,57 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     self.showAlert(title: "Sign Up failed", message: err!.localizedDescription)
                 }
                 else {
-                    let db = Firestore.firestore()
+                    // success!
                     
-                    db.collection("users").document(result!.user.uid).setData([
-                        "name": firstName + " " + lastName,
-                        "email": email,
-                        "last_visit": Utilities.getCurrentDateAndTime()
-                    ])
+                    let db = Firestore.firestore()
+                    self.upload(currentUserID: result!.user.uid, photo: self.profileImageView.image!) { url in
+                        
+                        if url != nil {
+                            VadeUser.shared.setPhotoURL(photoURL: url!)
+                        }
+                        db.collection("users").document((result?.user.uid)!).setData([
+                            "name": firstName + " " + lastName,
+                            "email": email,
+                            "last_visit": Utilities.getCurrentDateAndTime(),
+                            "uid": result!.user.uid,
+                            "photoURL": url?.absoluteString ?? ""
+                        ])
+                        
+                    }
+
+                    
                     
                     // set data for app vade user
                     VadeUser.shared.setName(name: firstName + " " + lastName)
                     VadeUser.shared.setEmail(email: email)
                     VadeUser.shared.setFirestoreID(id: result!.user.uid)
                     
+                    
                     Transitor.transitionToHealthDataVC(view: self.view, storyboard: self.storyboard, uid: result!.user.uid)
                 }
+            }
+        }
+    }
+    
+    func upload(currentUserID: String, photo: UIImage, completion: @escaping ((_ url:URL?)->())) {
+        let ref = Storage.storage().reference().child("avatars").child(currentUserID)
+        
+        guard let imageData = profileImageView.image?.jpegData(compressionQuality: 0.5) else { return }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        ref.putData(imageData, metadata: metadata){ metadata, error in
+            guard let _ = metadata else {
+                completion(nil)
+                return
+            }
+            ref.downloadURL { url, error in
+                guard let url = url else {
+                    completion(nil)
+                    return
+                }
+                completion(url)
             }
         }
     }

@@ -15,6 +15,7 @@ class VadeUser {
     private var birthday = "default"
     private var weight = "default"
     private var growth = "default"
+    private var photoURL: URL?
     
     static var shared = VadeUser()
     
@@ -48,6 +49,10 @@ class VadeUser {
         return growth
     }
     
+    func getPhotoURL() -> URL? {
+        return photoURL
+    }
+    
     func setName(name: String) {
         self.name = name
     }
@@ -74,5 +79,9 @@ class VadeUser {
     
     func setGrowth(growth: String) {
         self.growth = growth
+    }
+    
+    func setPhotoURL(photoURL: URL){
+        self.photoURL = photoURL
     }
 }
