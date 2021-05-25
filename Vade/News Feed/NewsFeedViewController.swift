@@ -56,10 +56,11 @@ class NewsFeedViewController: UIViewController, UITableViewDelegate, UITableView
                     let dict = childSnapshot.value as? [String:Any],
                     let author = dict["author"] as? [String:Any],
                     let username = author["username"] as? String,
+                    let timestamp = dict["timestamp"] as? Double,
                     let text = dict["text"] as? String {
                     
                 
-                    let post = Post(id: childSnapshot.key, author: username, text: text)
+                    let post = Post(id: childSnapshot.key, author: username, text: text,timestamp: timestamp)
                     tempPosts.insert(post, at: 0)
                 }
             }

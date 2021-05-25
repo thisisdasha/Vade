@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E147E0F265D2DEA0050A324 /* TrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E147E0E265D2DEA0050A324 /* TrainViewController.swift */; };
 		0E2B6CC5255EC14800AD2816 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B6CC4255EC14800AD2816 /* OnboardingViewController.swift */; };
 		0E35D3FB25E96AD60069D85C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E35D3F925E96AD60069D85C /* PostTableViewCell.swift */; };
 		0E35D3FC25E96AD60069D85C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E35D3FA25E96AD60069D85C /* PostTableViewCell.xib */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E147E0E265D2DEA0050A324 /* TrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewController.swift; sourceTree = "<group>"; };
 		0E2B6CC4255EC14800AD2816 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0E35D3F925E96AD60069D85C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		0E35D3FA25E96AD60069D85C /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		0EFEAFB426432B1800CEDF46 /* Train */ = {
 			isa = PBXGroup;
 			children = (
+				0E147E0E265D2DEA0050A324 /* TrainViewController.swift */,
 			);
 			path = Train;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				4159B92C252876190028D4BB /* SceneDelegate.swift in Sources */,
 				41581EB925641FC6009DC27B /* Extensions.swift in Sources */,
 				0E35D40C25E991020069D85C /* Post.swift in Sources */,
+				0E147E0F265D2DEA0050A324 /* TrainViewController.swift in Sources */,
 				41581EA225632C70009DC27B /* CustomDetailCellBuilder.swift in Sources */,
 				41581ED125643506009DC27B /* ProfileViewController.swift in Sources */,
 				417633642561433300C0CBF3 /* CellBuildersManager.swift in Sources */,

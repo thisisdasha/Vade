@@ -25,16 +25,18 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     @IBAction func tappedPostButton(_ sender: Any) {
         
     
-        //MARK: - TRY save posts
+        //MARK: - saving posts
         let postRef = Database.database().reference().child("posts").childByAutoId()
         let postObject = [
             "author" : [
                 "userid" : VadeUser.shared.getFirestoreID(),
-                "username" : VadeUser.shared.getName()
+                "username" : VadeUser.shared.getName(),
+                "photoURL" : VadeUser.shared.getPhotoURL()?.absoluteString
             ],
             "text" : textView.text ?? "",
             "timestamp" : [".sv":"timestamp"]
         ] as [String : Any]
+//        print("🔹in sign up🔹 \(VadeUser.shared.getPhotoURL()?.absoluteString)")
         
         //MARK:- здесь проверка на подключение к сети, нужно добавить предупреждение перед выходом когда офлайн
         let connectedRef = Database.database().reference(withPath: ".info/connected")

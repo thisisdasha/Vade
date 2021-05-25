@@ -328,14 +328,28 @@
         <!--Train-->
         <scene sceneID="GUh-h8-6aR">
             <objects>
-                <viewController id="u2L-w5-miK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainViewController" id="u2L-w5-miK" customClass="TrainViewController" customModule="Vade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C8U-Ef-iPf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zbw-Ub-s0M">
+                                <rect key="frame" x="20" y="84" width="374" height="453"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="18f-j3-8rf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="18f-j3-8rf" firstAttribute="trailing" secondItem="Zbw-Ub-s0M" secondAttribute="trailing" constant="20" id="9py-hq-QVZ"/>
+                            <constraint firstItem="Zbw-Ub-s0M" firstAttribute="leading" secondItem="18f-j3-8rf" secondAttribute="leading" constant="20" id="Fz8-1s-r4j"/>
+                            <constraint firstItem="18f-j3-8rf" firstAttribute="bottom" secondItem="Zbw-Ub-s0M" secondAttribute="bottom" constant="276" id="stt-AX-rua"/>
+                            <constraint firstItem="Zbw-Ub-s0M" firstAttribute="top" secondItem="18f-j3-8rf" secondAttribute="top" constant="40" id="zG2-YB-XB7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Train" image="icon_bike" id="aZ2-aR-pUb"/>
+                    <connections>
+                        <outlet property="mapView" destination="Zbw-Ub-s0M" id="xtQ-Df-rlw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSK-58-eSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -112,13 +112,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         
                         if url != nil {
                             VadeUser.shared.setPhotoURL(photoURL: url!)
+                            print("🔸in sign up🔸 \(VadeUser.shared.getPhotoURL()?.absoluteString)")
                         }
                         db.collection("users").document((result?.user.uid)!).setData([
                             "name": firstName + " " + lastName,
                             "email": email,
                             "last_visit": Utilities.getCurrentDateAndTime(),
                             "uid": result!.user.uid,
-                            "photoURL": url?.absoluteString ?? ""
+                            "photoURL": url?.absoluteString ?? "defaultURL" //firestore database
                         ])
                         
                     }

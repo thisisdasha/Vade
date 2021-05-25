@@ -32,5 +32,6 @@ class PostTableViewCell: UITableViewCell {
     func set(post: Post) {
         usernameLabel.text = post.author
         postTextLabel.text = post.text
+        subtitleLabel.text = post.createdAt.calenderTimeSinceNow()
     }
 }

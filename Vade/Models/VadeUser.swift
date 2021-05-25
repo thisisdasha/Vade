@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class VadeUser {
     private var name = "default"
@@ -50,7 +51,24 @@ class VadeUser {
     }
     
     func getPhotoURL() -> URL? {
-        return photoURL
+        print("\nIN FUNC func getPhotoURL")
+        if photoURL != nil {
+            return photoURL
+        } else {
+            // get url from firebase
+            var newPhotoUrl: URL?
+            let db = Firestore.firestore()
+            let docRef = db.collection("users").document(firestoreID)
+            
+            docRef.getDocument { (document, error) in
+                let data = document?.data()?["photoURL"]
+                newPhotoUrl =  URL(string: data as! String)
+//                print("🟨photoURL🟨\(newPhotoUrl)")
+            }
+            // MARK: - блок кода выполняется после завершения ф-ии!
+//            print("🟩newPhotoUrl🟩\(String(describing: newPhotoUrl))")
+            return newPhotoUrl
+        }
     }
     
     func setName(name: String) {
