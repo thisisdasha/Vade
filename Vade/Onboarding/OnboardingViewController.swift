@@ -10,7 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
-    let dataSource = ["Welcome", "Set your route", "Train with your friends", "Choose your workout"]
+    let dataSource = ["This application allows you to record and analyze your training results!", "Calculate the distance and duration of your route !", "Real-time workout information on map with precise GPS coordinates. ", "Receive a detailed report of your trip after it is completed. "]
     var currentViewControllerIndex = 0
     
     
@@ -69,7 +69,7 @@ class OnboardingViewController: UIViewController {
         //adding text for label
         dataViewController.displayText = dataSource[index]
         dataViewController.imageName = "onboarding_\(index + 1)"
-        dataViewController.buttonName = "Start"
+        dataViewController.buttonName = "START"
         
         return dataViewController
     }
