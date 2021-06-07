@@ -21,6 +21,10 @@ class HealthDataViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorInset = UIEdgeInsets.zero
+        
+        continueButton.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        continueButton.setTitleColor(.white, for: .normal)
+        continueButton.layer.cornerRadius = continueButton.layer.bounds.height / 2
     }
     
     // action for continue button

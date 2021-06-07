@@ -44,8 +44,8 @@ class DataViewController: UIViewController {
         contentImageView.image = UIImage(named: imageName)
         contentButton.setTitle(buttonName, for: .normal)
         contentButton.setTitleColor(.white, for: .normal)
-        contentButton.backgroundColor = .black
-        contentButton.layer.cornerRadius = 25.0
+        contentButton.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        contentButton.layer.cornerRadius = contentButton.layer.bounds.height / 2
         
     }
 

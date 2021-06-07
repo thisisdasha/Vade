@@ -40,20 +40,20 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
         
         //MARK:- здесь проверка на подключение к сети, нужно добавить предупреждение перед выходом когда офлайн
         let connectedRef = Database.database().reference(withPath: ".info/connected")
-         connectedRef.observe(.value, with: { snapshot in
-           if snapshot.value as? Bool ?? false {
-             print("🟢Connected")
-            postRef.setValue(postObject) { (error , ref) in
-                if error == nil {
-                    self.dismiss(animated: true)
-                } else {
-                    // Handle the error
+        connectedRef.observe(.value, with: { snapshot in
+            if snapshot.value as? Bool ?? false {
+                print("🟢Connected")
+                postRef.setValue(postObject) { (error , ref) in
+                    if error == nil {
+                        self.dismiss(animated: true)
+                    } else {
+                        // Handle the error
+                    }
                 }
+            } else {
+                print("🟢Not connected")
+                self.dismiss(animated: true)
             }
-           } else {
-             print("🟢Not connected")
-            self.dismiss(animated: true)
-           }
          })
 
     
@@ -61,7 +61,6 @@ class NewPostViewController: UIViewController, UITextViewDelegate {
     }
     
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-//        textView.resignFirstResponder()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
             super.dismiss(animated: flag, completion: completion)
         })
