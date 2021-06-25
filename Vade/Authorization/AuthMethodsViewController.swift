@@ -89,6 +89,7 @@ class AuthMethodsViewController: UIViewController{
                 let sex = document.get("sex") as! String
                 let weight = document.get("weight") as! String
                 let growth = document.get("growth") as! String
+                let photoURL = document.get("photoURL") as! String
                 
                 VadeUser.shared.setName(name: name)
                 VadeUser.shared.setEmail(email: email)
@@ -97,6 +98,9 @@ class AuthMethodsViewController: UIViewController{
                 VadeUser.shared.setSex(sex: sex)
                 VadeUser.shared.setWeight(weight: weight)
                 VadeUser.shared.setGrowth(growth: growth)
+                //MARK: - здесь извлекается URL
+                print("❌ \(photoURL)")
+                VadeUser.shared.setPhotoURL(photoURL: URL(string: photoURL)!)
                 
                 userDocument.setData(["last_visit": Utilities.getCurrentDateAndTime()], merge: true)
                 

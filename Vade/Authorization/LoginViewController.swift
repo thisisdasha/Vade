@@ -51,6 +51,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let sex = document.get("sex") as! String
                 let weight = document.get("weight") as! String
                 let growth = document.get("growth") as! String
+                let photoURL = document.get("photoURL") as! String
 
                 VadeUser.shared.setName(name: name)
                 UserDefaults.standard.setValue(name, forKey: "userName")
@@ -65,6 +66,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 UserDefaults.standard.setValue(weight, forKey: "userWeight")
                 VadeUser.shared.setGrowth(growth: growth)
                 UserDefaults.standard.setValue(growth, forKey: "userGrowth")
+                VadeUser.shared.setPhotoURL(photoURL: URL(string: photoURL)!)
+                UserDefaults.standard.setValue(photoURL, forKey: "userPhotoURL")
                 
                 Transitor.transitionToTabBarVC(view: self.view, storyboard: self.storyboard)
 
